@@ -3,7 +3,7 @@ var app=e();
 var passport= require("passport"),LocalStrategy= require("passport-local"),passportLocalMongoose= require("passport-local-mongoose");
 var User= require("./models/user");
 
-mongoose.connect("mongodb://ketan:deepansh15@ds123372.mlab.com:23372/basic_auth", { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
 app.set("view engine","ejs");
 app.use(e.static("public"));
 app.use(bodyparser.urlencoded({extended:true}));
